@@ -1,12 +1,11 @@
 const express = require('express');
 
 const app = express();  
+const homeMarkup = require('./home');
 
 
 app.get('/', (req, res) => {
-    res.send(`
-        <h1>Hello world</h1>
-    `);
+    res.send(homeMarkup);
 });
 
 app.listen(3000, (err) => {
