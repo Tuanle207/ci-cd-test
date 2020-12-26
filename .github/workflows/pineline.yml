@@ -20,17 +20,18 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        key: ${{ secrets.SSHKEY }}
+        #key: ${{ secrets.SSHKEY }}
         source: "."
         target: "/var/www/html/ci-cd-test"
-        use_insecure_cipher: true
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
+        PASSWORD: ${{ secrets.PASSWORD }}
         PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
+        #KEY: ${{ secrets.SSHKEY }}
         script: ls
